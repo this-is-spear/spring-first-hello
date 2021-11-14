@@ -14,7 +14,6 @@ import java.util.Optional;
  * Blog : https://imspear.tistory.com/
  * Github : https://github.com/Imaspear
  */
-@Service
 public class MemberService {
 
     private final MemberRepository memberRepository;
