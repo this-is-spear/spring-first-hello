@@ -1,5 +1,6 @@
 package imaspear.hellospring;
 
+import imaspear.hellospring.aop.TimeTraceAop;
 import imaspear.hellospring.domain.Member;
 import imaspear.hellospring.repository.JDBCTemplateMemberRepository;
 import imaspear.hellospring.repository.JPAMemberRepository;
@@ -25,6 +26,7 @@ public class SpringConfig {
 
     private final MemberRepository memberRepository;
 
+    @Autowired
     public SpringConfig(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
@@ -34,4 +36,8 @@ public class SpringConfig {
         return new MemberService(memberRepository);
     }
 
+    @Bean
+    public TimeTraceAop timeTraceAop(){
+        return new TimeTraceAop();
+    }
 }
